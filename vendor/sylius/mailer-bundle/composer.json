@@ -1,0 +1,77 @@
+{
+    "name": "sylius/mailer-bundle",
+    "type": "symfony-bundle",
+    "description": "Mailers and e-mail template management for Symfony projects.",
+    "keywords": ["mailer", "email", "swiftmailer"],
+    "homepage": "http://sylius.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paweł Jędrzejewski",
+            "homepage": "http://pjedrzejewski.com"
+        },
+        {
+            "name": "Sylius project",
+            "homepage": "http://sylius.com"
+        },
+        {
+            "name": "Community contributions",
+            "homepage": "http://github.com/Sylius/Sylius/contributors"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+
+        "sylius-labs/polyfill-symfony-event-dispatcher": "^1.0",
+        "symfony/config": "^4.3|^5.0",
+        "symfony/dependency-injection": "^4.3|^5.0",
+        "symfony/framework-bundle": "^4.3|^5.0",
+        "symfony/http-kernel": "^4.3|^5.0",
+        "twig/twig": "^2.12"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^6.1",
+        "phpstan/phpstan-phpunit": "^0.12",
+        "phpstan/phpstan": "^0.12",
+        "phpstan/phpstan-webmozart-assert": "^0.12",
+        "phpunit/phpunit": "^8.5",
+        "sylius-labs/coding-standard": "^3.0",
+        "symfony/console": "^4.3|^5.0",
+        "symfony/swiftmailer-bundle": "^3.1",
+        "symfony/twig-bundle": "^4.3|^5.0",
+        "vimeo/psalm": "^3.5"
+    },
+    "replace": {
+        "sylius/mailer": "self.version"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sylius\\Bundle\\MailerBundle\\": "src/Bundle/",
+            "Sylius\\Component\\Mailer\\": "src/Component/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sylius\\Bundle\\MailerBundle\\spec\\": "src/Bundle/spec/",
+            "Sylius\\Component\\Mailer\\spec\\": "src/Component/spec/"
+        },
+        "classmap": [
+            "src/Bundle/test/app/AppKernel.php"
+        ]
+    },
+    "scripts": {
+        "analyse": [
+            "@php vendor/bin/ecs check src",
+            "@php vendor/bin/phpstan analyse --ansi -c phpstan.neon -l max src",
+            "@php vendor/bin/psalm"
+        ],
+        "fix": [
+            "@php vendor/bin/ecs check src --fix"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.5-dev"
+        }
+    }
+}

@@ -1,0 +1,4 @@
+sphinx
+pyOpenSSL
+requests[security]
+git+https://github.com/fabpot/sphinx-php.git

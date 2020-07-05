@@ -1,0 +1,9 @@
+AppBundle\Entity\Price:
+    exclusion_policy: ALL
+    properties:
+        amount:
+            expose: true
+            type: integer
+        currencyCode:
+            expose: true
+            type: string
