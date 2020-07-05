@@ -1,5 +1,5 @@
 {
-    "name": "webkul/sylius-example-plugin",
+    "name": "wkdks/sylius-example-plugin",
     "type": "sylius-plugin",
     "keywords": ["sylius", "sylius-plugin"],
     "description": "Webkul example plugin for Sylius.",
@@ -36,8 +36,8 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Webkul\\SyliusExamplePlugin\\": "src/",
-            "Tests\\Webkul\\SyliusExamplePlugin\\": "tests/"
+            "Wkdks\\SyliusExamplePlugin\\": "src/",
+            "Tests\\Wkdks\\SyliusExamplePlugin\\": "tests/"
         }
     },
     "autoload-dev": {

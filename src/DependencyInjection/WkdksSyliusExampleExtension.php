@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Webkul\SyliusExamplePlugin\DependencyInjection;
+namespace Wkdks\SyliusExamplePlugin\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
-final class WebkulSyliusExampleExtension extends Extension
+final class WkdksSyliusExampleExtension extends Extension
 {
     /**
      * {@inheritdoc}
