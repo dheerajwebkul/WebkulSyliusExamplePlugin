@@ -58,15 +58,15 @@ class ComposerStaticInit6b675b91b2114df02a09913bad2d3449
         ),
         'W' => 
         array (
+            'Wkdks\\SyliusExamplePlugin\\' => 26,
             'WhiteOctober\\PagerfantaBundle\\' => 30,
             'Webmozart\\Assert\\' => 17,
-            'Webkul\\SyliusExamplePlugin\\' => 27,
         ),
         'T' => 
         array (
             'Twig\\Extensions\\' => 16,
             'Twig\\' => 5,
-            'Tests\\Webkul\\SyliusExamplePlugin\\' => 33,
+            'Tests\\Wkdks\\SyliusExamplePlugin\\' => 32,
         ),
         'S' => 
         array (
@@ -317,6 +317,10 @@ class ComposerStaticInit6b675b91b2114df02a09913bad2d3449
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-code/src',
         ),
+        'Wkdks\\SyliusExamplePlugin\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
         'WhiteOctober\\PagerfantaBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/white-october/pagerfanta-bundle',
@@ -324,10 +328,6 @@ class ComposerStaticInit6b675b91b2114df02a09913bad2d3449
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
-        ),
-        'Webkul\\SyliusExamplePlugin\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
         ),
         'Twig\\Extensions\\' => 
         array (
@@ -337,7 +337,7 @@ class ComposerStaticInit6b675b91b2114df02a09913bad2d3449
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
         ),
-        'Tests\\Webkul\\SyliusExamplePlugin\\' => 
+        'Tests\\Wkdks\\SyliusExamplePlugin\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
         ),
