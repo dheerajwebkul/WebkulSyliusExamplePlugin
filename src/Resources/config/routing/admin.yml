@@ -1,0 +1,35 @@
+wkdks_example_admin_configuration:
+  resource: |
+    alias: wkdks_sylius_example_plugin.configuration
+    section: admin
+    templates: SyliusAdminBundle:Crud
+    except: ['show']
+    redirect: update
+    grid: wkdks_example
+    vars:
+      all:
+        subheader: wkdks_sylius_example_plugin.ui.manage_maintenance_page
+      index:
+        icon: list alternate
+  type: sylius.resource
+
+# wkdks_sylius_example_plugin_configuration:
+#    path: /configuration
+#    defaults:
+#        _controller: WkdksSyliusExamplePlugin:Configuration:index
+#        _sylius:
+#             alias: wkdks_sylius_example_plugin.configuration
+#             section: admin
+#             _locale: en_US
+#             template: "@SyliusAdmin/Crud/index.html.twig"
+#             except: ['show']
+#             redirect: update
+#             grid: wkdks_maintenance_page
+#             permission: true
+#             vars:
+#                 icon: history
+#                 templates:
+#                     form: '@WkdksSyliusExamplePlugin/Admin/Configuration/_form.html.twig'
+#                     breadcrumb: "@SyliusAdmin/Inventory/Index/_breadcrumb.html.twig"
+#                 header: sylius.ui.inventory
+#                 subheader: wkdks_sylius_example_plugin.ui.manage_maintenance_page

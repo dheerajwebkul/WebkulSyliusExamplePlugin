@@ -1,0 +1,10 @@
+sylius_resource:
+  resources:
+    wkdks_sylius_example_plugin.configuration:
+      classes:
+        model: Wkdks\SyliusExamplePlugin\Entity\Configuration
+        form: Wkdks\SyliusExamplePlugin\Form\Type\MaintenanceType
+        repository: Wkdks\SyliusExamplePlugin\Repository\ConfigurationRepository
+      translation:
+        classes:
+          model: Wkdks\SyliusExamplePlugin\Entity\ConfigurationTranslation

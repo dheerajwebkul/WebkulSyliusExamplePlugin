@@ -1,0 +1,46 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Wkdks\SyliusExamplePlugin\:
+    resource: '../../*'
+    exclude: '../../{DependencyInjection,Form/Type}'
+
+  # Repository interface for autowiring
+  # not needed
+
+  # Menu item in admin panel
+  wkdks_sylius_example_plugin.event_listener.admin.menu_builder:
+    class: Wkdks\SyliusExamplePlugin\Menu\AdminMenuListener
+    tags:
+      - { name: kernel.event_listener, event: sylius.menu.admin.main, method: addAdminMenuItems }
+
+  # Message Forms
+  wkdks_sylius_example_plugin.form.type.configuration:
+    class: Wkdks\SyliusExamplePlugin\Form\Type\MaintenanceType
+    tags:
+      - { name: form.type }
+    arguments:
+      - '%wkdks_sylius_example_plugin.model.configuration.class%'
+
+  wkdks_sylius_example_plugin.form.type.configuration_translation:
+    class: Wkdks\SyliusExamplePlugin\Form\Type\ConfigurationTranslationType
+    tags:
+      - { name: form.type }
+    arguments:
+      - '%wkdks_sylius_example_plugin.model.configuration_translation.class%'
+
+  # Front
+  wkdks_sylius_example_plugin.controller.shop.homepage:
+    class: Wkdks\SyliusExamplePlugin\Controller\Shop\HomepageController
+    arguments: ['@templating']
+    tags: ['controller.service_arguments']
+
+  wkdks_sylius_example_plugin.block_event_listener.layout.before_body:
+    class: Wkdks\SyliusExamplePlugin\Block\BlockEventListener
+    arguments:
+      $template: '@@WkdksSyliusExamplePlugin/message.html.twig'
+    tags:
+      - { name: kernel.event_listener, event: sonata.block.event.sylius.shop.layout.before_body, method: onBlockEvent }
